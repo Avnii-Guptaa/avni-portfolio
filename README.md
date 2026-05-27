@@ -2,7 +2,7 @@
 
 Personal portfolio website for Avni Gupta, Technology Solutions Developer & Data Automation Specialist.
 
-**Live site:** [https://avni-gupta.vercel.app](https://avni-gupta.vercel.app)
+**Live site:** [https://avni-gupta.vercel.app](https://avni-portfolio-ashy.vercel.app/)
 
 ## Tech Stack
 - Pure HTML, CSS, JavaScript — no frameworks, no build step
