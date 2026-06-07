@@ -26,20 +26,6 @@ Personal portfolio website for Avni Gupta, Technology Solutions Developer & Data
 4. Framework Preset: **Other**
 5. Click **Deploy** — done ✅
 
-No build configuration needed. Vercel serves `index.html` directly.
 
-## Local Development
-```bash
-# Just open in browser — no server needed
-open index.html
 
-# Or use a simple local server
-npx serve .
-```
 
-## Customization
-All content is in `index.html`. Key sections to update:
-- Hero stats & description
-- Work experience dates/roles
-- Contact info (email, phone)
-- Social links in footer
