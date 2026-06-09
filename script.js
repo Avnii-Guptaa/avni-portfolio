@@ -152,7 +152,7 @@ document.getElementById('contactForm').addEventListener('submit', e => {
   btn.textContent = '⏳ Sending...';
   btn.disabled = true;
 
-  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+  emailjs.send("Service_bi7yoa0", "template_ohixeag", {
     from_name:  document.getElementById('f-name').value,
     from_email: document.getElementById('f-email').value,
     message:    document.getElementById('f-message').value,
