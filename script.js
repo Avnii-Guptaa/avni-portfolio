@@ -147,11 +147,37 @@ backToTop.addEventListener('click', () => {
 document.getElementById('contactForm').addEventListener('submit', e => {
   e.preventDefault();
   const btn = document.getElementById('submitBtn');
-  btn.textContent       = '✓ Sent!';
-  btn.style.background  = 'var(--green)';
-  setTimeout(() => {
-    btn.textContent      = '⚡ Send Message';
-    btn.style.background = '';
+  const status = document.getElementById('formStatus');
+
+  btn.textContent = '⏳ Sending...';
+  btn.disabled = true;
+
+  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+    from_name:  document.getElementById('f-name').value,
+    from_email: document.getElementById('f-email').value,
+    message:    document.getElementById('f-message').value,
+    reply_to:   document.getElementById('f-email').value,
+  })
+  .then(() => {
+    btn.textContent = '✓ Message Sent!';
+    btn.style.background = 'var(--green)';
+    status.style.display = 'block';
+    status.style.color = 'var(--green)';
+    status.textContent = '✔ Your message was delivered. I\'ll get back to you soon!';
     e.target.reset();
-  }, 3000);
+    setTimeout(() => {
+      btn.textContent = '⚡ Send Message';
+      btn.style.background = '';
+      btn.disabled = false;
+      status.style.display = 'none';
+    }, 5000);
+  })
+  .catch((err) => {
+    btn.textContent = '⚡ Send Message';
+    btn.disabled = false;
+    status.style.display = 'block';
+    status.style.color = '#ff5f56';
+    status.textContent = '✖ Something went wrong. Please email me directly at avnigupta.works@gmail.com';
+    console.error('EmailJS error:', err);
+  });
 });
